@@ -1,0 +1,30 @@
+<fieldset>
+<h1>Registration Details</h1>
+<%= form_for 'medicines', :url => {:action => "create"} do %>
+<%= fields_for 'medicines' do |m|%>
+<table>
+	<tr>
+		<label>User name: </label>
+		<%= m.text_field 'user_name'%>
+	</tr>&nbsp
+	<tr>
+		<label>Password: </label>
+		<%= m.password_field 'password'%>
+	</tr>&nbsp
+	<tr>
+		<label>Age: </label>
+		<%= m.text_field 'age'%>
+	</tr></br></br>
+	<tr>
+		<label>&nbsp &nbsp &nbsp Email: </label>
+		<%= m.text_field 'email'%>
+	</tr>&nbsp
+	<tr>
+		<label>&nbsp &nbsp &nbsp Mobile: </label>
+		<%= m.text_field 'mobile'%>
+	</tr></br></br>
+</table>
+<p><%= m.submit "Create"%></p>
+<%end%>
+<%end%>
+</fieldset>

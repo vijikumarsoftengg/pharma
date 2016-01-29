@@ -1,0 +1,27 @@
+<fieldset>
+<h1>Login Details</h1>
+
+<img src="/images/health-care-logo.jpg" style="width:500px;height:228px;"></br>
+
+<%= form_for 'medicines', :url => {:action => "logi"} do %>
+<%= fields_for 'medicines' do |m|%>
+<div id= "one">
+<table>
+	<tr>
+		<label>User name: </label>
+		<%= m.text_field 'user_name'%>
+	</tr>&nbsp
+	<tr>
+		<label>Password: </label>
+		<%= m.password_field 'password'%>
+	</tr>&nbsp
+	<%= m.submit "Login"%>
+
+</table>
+</div>
+<p><%= link_to 'If you are a new user, click here  for registration', {:action => 'registration'} %></p>
+<%end%>
+<%end%>
+</fieldset>
+
+<%= link_to 'Medicine', {:controller => 'medicines' ,:action => 'index'}%>
