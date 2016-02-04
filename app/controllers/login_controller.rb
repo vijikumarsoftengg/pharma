@@ -8,8 +8,9 @@ class LoginController < ApplicationController
     
     
   def logi
-      medicines = Medicines.find_by_user_name_and_password(params[:medicines][:user_name],params[:medicines][:password])
-        if !medicines.blank?
+      users = User.find_by_user_name_and_password(params[:users][:user_name],params[:users][:password])
+
+        if !users.blank?
           redirect_to :controller => 'home' ,:action => 'index'
         else
           render :action => 'login'
@@ -17,8 +18,8 @@ class LoginController < ApplicationController
     end
     
     def create
-      @medicines=Medicines.new(params[:medical])
-        if @medicines.save
+      @users=User.new(params[:users])
+        if @users.save
           redirect_to :action => "login"
         else
           render :action => "registration"

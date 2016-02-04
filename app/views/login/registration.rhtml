@@ -1,30 +1,42 @@
-<fieldset>
+
+<!DOCTYPE html>
+<html>
+	<style>
+body {
+    background-image: url("/images/spric.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+ 
+ }
+</style>
+<body>
 <h1>Registration Details</h1>
-<%= form_for 'medicines', :url => {:action => "create"} do %>
-<%= fields_for 'medicines' do |m|%>
+<%= form_for 'users', :url => {:action => "create"} do %>
+<%= fields_for 'users' do |u|%>
 <table>
 	<tr>
 		<label>User name: </label>
-		<%= m.text_field 'user_name'%>
+		<%= u.text_field 'user_name'%>
 	</tr>&nbsp
 	<tr>
 		<label>Password: </label>
-		<%= m.password_field 'password'%>
+		<%= u.password_field 'password'%>
 	</tr>&nbsp
 	<tr>
 		<label>Age: </label>
-		<%= m.text_field 'age'%>
+		<%= u.text_field 'age'%>
 	</tr></br></br>
 	<tr>
 		<label>&nbsp &nbsp &nbsp Email: </label>
-		<%= m.text_field 'email'%>
+		<%= u.text_field 'email'%>
 	</tr>&nbsp
 	<tr>
 		<label>&nbsp &nbsp &nbsp Mobile: </label>
-		<%= m.text_field 'mobile'%>
+		<%= u.text_field 'mobile'%>
 	</tr></br></br>
 </table>
-<p><%= m.submit "Create"%></p>
+<p><%= u.submit "Create"%></p>
 <%end%>
 <%end%>
-</fieldset>
+

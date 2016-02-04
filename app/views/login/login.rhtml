@@ -1,27 +1,44 @@
-<fieldset>
+<!DOCTYPE html>
+<html>
+<style>
+body {
+	 height: 100%;
+  width: 100%;
+    background-image: url("/images/health-care-logo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+ 
+ }
+</style>
+<body>
 <h1>Login Details</h1>
-
-<img src="/images/health-care-logo.jpg" style="width:500px;height:228px;"></br>
-
-<%= form_for 'medicines', :url => {:action => "logi"} do %>
-<%= fields_for 'medicines' do |m|%>
+<%= form_for 'users', :url => {:action => "logi"} do %>
+<%= fields_for 'users' do |u|%>
 <div id= "one">
 <table>
 	<tr>
 		<label>User name: </label>
-		<%= m.text_field 'user_name'%>
+		<%= u.text_field 'user_name'%>
 	</tr>&nbsp
 	<tr>
 		<label>Password: </label>
-		<%= m.password_field 'password'%>
+		<%= u.password_field 'password'%>
 	</tr>&nbsp
-	<%= m.submit "Login"%>
+	<%= u.submit "Login"%>
 
 </table>
 </div>
 <p><%= link_to 'If you are a new user, click here  for registration', {:action => 'registration'} %></p>
+</body>
 <%end%>
 <%end%>
-</fieldset>
+</html>
 
-<%= link_to 'Medicine', {:controller => 'medicines' ,:action => 'index'}%>
+
+<%#= link_to 'Medicine', {:controller => 'medicines' ,:action => 'index'}%>

@@ -1,0 +1,26 @@
+<h1>List of medicines</h1>
+<table border="1">
+	<tr>
+		<th>Sl.No</th>
+		<th>Medicine name</th>
+		<th>Quantity</th>
+		<th>Dosage</th>
+		<th>Expiry date</th>
+	</tr>
+	<% count = 0 %>
+	
+	<%for medicine in @medicines%>
+	<tr>
+		<td><%= count +=1%></td>
+	<td><%=medicine.medicine_name%></td>
+	<td><%=medicine.quantity%></td>
+	<td><%=medicine.dosage%></td>
+	<td><%=medicine.expiry_date%></td>
+	<%end%>
+	</tr>
+</table>
+<br />
+
+<%= link_to 'Create New Medicine', {:controller => 'medicines' ,:action => 'new'}%>
+
+  
